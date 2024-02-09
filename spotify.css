@@ -220,10 +220,11 @@ main{
 }
 
 /* Main block started */
-.sign-in-box,.left-right-arow,.sign-in-btn-box,.left-right-arow > div,.sportify-playlist-text{
+.sign-in-box,.left-right-arow,.sign-in-btn-box,.left-right-arow > div,.sportify-playlist-text,.sportify-playlist-section,.sportify-playlist-card,.card1-text,.card2-text,.card3-text,.card4-text{
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 
@@ -231,7 +232,6 @@ main{
     width: 77vw;
     height: 90vh;
     border-radius: 8px;
-    box-sizing: border-box;
     background-color: #1E1E1E;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -242,7 +242,6 @@ main{
 .sign-in-box{
     width: calc(75vw + 2px);
     height: auto;
-    box-sizing: border-box;
     border-radius: 8px 8px 0 0;
     background-color: #101010;
     position:fixed;
@@ -250,6 +249,7 @@ main{
     padding-inline: 10px 30px;
     padding-block: 9px 7px;
     z-index: 1000;
+    opacity: .9;
 
 }
 
@@ -293,11 +293,11 @@ main{
 }
 
 .sportify-playlist{
-    width: 100%;
+    width: 95%;
     height: 100vh;
-    box-sizing: border-box;
     z-index: 10;
     padding: 50px 20px 10px 20px;
+    
     
     
 }
@@ -312,3 +312,84 @@ main{
 .sportify-playlist-text button{
     font-size: .90rem;
 }
+
+.sportify-playlist-section{
+    width: 71vw;
+    height: 40vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 15px;
+    align-items: flex-start;
+
+}
+.sportify-playlist-section .sportify-playlist-card{
+    width: 25vh;
+    height: 35vh;
+    align-items:flex-start;
+    padding: 1px 0 0 0;
+    border-radius: 8px;
+    flex-direction: column;
+    background-color: #181818;
+}
+
+.card1 .sportify-playlist-card-img-1{
+    width: 21vh;
+    height: 21vh;
+    background-image: url('Mahir\ zain.jpg');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #000000bd;
+    margin: 0 auto;
+}
+
+.card1 h4,.card2 h4,.card3 h4,.card4 h4{
+   margin: 0;
+}
+
+.card1 span,.card2 span,.card3 span,.card4 span{
+   color: #A2A2A2;
+   font-size: .90rem;
+}
+
+.card1-text,.card2-text,.card3-text,.card4-text{
+    flex-direction: column;
+    width: auto;
+    height: 8vh;
+    align-items: flex-start;
+    justify-content:flex-start;
+    margin: 15px 0 0 15px;
+    padding-top: 0; 
+}
+.card2 .sportify-playlist-card-img-2{
+    width: 21vh;
+    height: 21vh;
+    background-image: url('Humood.jpg');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #000000bd;
+    margin: 0 auto;
+}
+.card3 .sportify-playlist-card-img-3{
+    width: 21vh;
+    height: 21vh;
+    background-image: url('Reaf.jpg');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #000000bd;
+    margin: 0 auto;
+}
+
+.card4 .sportify-playlist-card-img-4{
+    width: 21vh;
+    height: 21vh;
+    background-image: url('Omer\ esa.jpg');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #000000bd;
+    margin: 0 auto;
+}
+
