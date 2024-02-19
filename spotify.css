@@ -370,16 +370,23 @@ main {
     font-size: .90rem;
 }
 
-.sportify-playlist-section {
-    width: 71vw;
-    height: 40vh;
+.sportify-playlist-section{
+    width: 70vw;
+    min-height: 45vh;
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: 15px;
+    justify-content: center;
+    gap: 50px;
     align-items: flex-start;
-}
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 10px;
+    flex-wrap: wrap;
 
-.sportify-playlist-section .sportify-playlist-card {
+}
+/*
+.sportify-playlist-section .sportify-playlist-card{
+    position: relative;
     width: 25vh;
     height: 35vh;
     align-items: flex-start;
@@ -387,6 +394,7 @@ main {
     border-radius: 8px;
     flex-direction: column;
     background-color: #181818;
+    z-index: 10;
 }
 
 
@@ -397,11 +405,12 @@ main {
     border-radius: 8px;
     background-color: #282828;
     opacity: 0;
-    z-index: 1;
+    z-index: -1;
 }
 
 .hover-layer-container:hover{
-    opacity: .60;
+    opacity: .80;
+
 }
 
 .playbtn{
@@ -414,23 +423,16 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    bottom: 53%;
+    bottom: 30%;
     z-index: 100;
     margin:  0 0 0 150px;
     opacity: 0;
     transition: .4s all ease;
+    cursor: pointer;
+
 
 }
 
-.hover-layer-container:hover ~ .playbtn{
-    bottom: 60%;
-    opacity: 1;
-}
-
-.sportify-playlist-card:hover + .playbtn{
-    bottom: 60%;
-    opacity: 1;
-}
 .card1 h4,
 .card2 h4,
 .card3 h4,
@@ -447,10 +449,7 @@ main {
     z-index: 10;
 }
 
-.card1-text,
-.card2-text,
-.card3-text,
-.card4-text {
+.card-text{
     flex-direction: column;
     width: auto;
     height: 8vh;
@@ -474,26 +473,49 @@ main {
 }
 .card1 .sportify-playlist-card-img-1{
     background-image: url('Mahir\ zain.jpg');
-
+    
 }
 
 
 
 .card2 .sportify-playlist-card-img-2 {
     background-image: url('Humood.jpg');
-
+    
 }
 
 .card3 .sportify-playlist-card-img-3 {
     background-image: url('Reaf.jpg');
-
+    
 }
 
 .card4 .sportify-playlist-card-img-4 {
     background-image: url('Omer\ esa.jpg');
     
+} 
+
+.sportify-playlist-img:hover ~ .playbtn{
+    bottom: 40%;
+    opacity: 1;
+}
+.sportify-playlist-card:hover + .playbtn{
+    bottom: 40%;
+    opacity: 1;
+}
+.card-text:hover ~ .playbtn{
+    bottom: 40%;
+    opacity: 1;
 }
 
+.hover-layer-container:hover ~ .playbtn{
+    bottom: 40%;
+    opacity: 1;
+}
+.playbtn:hover{
+    transform: scale(1.05);
+    opacity: 1;
+    bottom: 40%;
+}
+*/
 /*  sportify-playlist-footer  */
 
 .sportify-playlist .sportify-playlist-footer {
