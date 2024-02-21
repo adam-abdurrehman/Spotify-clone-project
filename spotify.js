@@ -10,10 +10,36 @@ let hover = function generateHoverLayerContainer() {
             border-radius: 8px;
             background-color: #282828;
             opacity: 0;
-            z-index: -1;">
+            z-index: 1;">
         </div>`;
 }
 
+let playbtn = function playbtn(){
+    return `
+    <div class="playbtn" style="
+    position: absolute;
+    width: 5vh;
+    height: 5vh;
+    z-index: 1;
+    background-color: #1ed760;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 25%;
+    z-index: 100;
+    margin:  0 0 0 150px;
+    opacity: 0;
+    transition: .4s all ease;
+    cursor: pointer;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" data-encore-id="icon"
+            role="img" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 bneLcE">
+            <path
+                d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+            </path>
+        </svg>
+    </div>`;
+}
 function generatePictureCards() {
     // Get container element
     const cardContainer = document.getElementById('sportify-playlist-section1');
@@ -48,29 +74,7 @@ function generatePictureCards() {
             z-index: 10;
             box-shadow: 0 2px 15px #000;">
         </div>
-            <div class="playbtn" style="
-            position: absolute;
-            width: 5vh;
-            height: 5vh;
-            z-index: 20;
-            background-color: #1ed760;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            bottom: 30%;
-            z-index: 100;
-            margin:  0 0 0 150px;
-            opacity: 0;
-            transition: .4s all ease;
-            cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" data-encore-id="icon"
-                    role="img" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 bneLcE">
-                    <path
-                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
-                    </path>
-                </svg>
-            </div>
+        ${playbtn()}
             <div class="card-text" style="
             display: flex;
             flex-direction: column;
@@ -91,6 +95,39 @@ function generatePictureCards() {
 
     // Update container with HTML
     cardContainer.innerHTML = html;
+
+    cardContainer.querySelectorAll('.hover-layer-container').forEach(hoverLayer => {
+        hoverLayer.addEventListener('mouseover', () => {
+            // Change opacity of each playbtn
+            const playbtn = hoverLayer.parentElement.querySelector('.playbtn');
+                playbtn.style.opacity = "1";
+                playbtn.style.bottom = "40%";
+            // Change opacity of the hoverLayer
+            hoverLayer.style.opacity = "1";
+        });
+        // Reset opacity when mouse leaves hoverLayer
+        hoverLayer.addEventListener('mouseout', () => {
+            // Change opacity of each playbtn
+            const playbtn = hoverLayer.parentElement.querySelector('.playbtn');
+                playbtn.style.opacity = "0";
+                playbtn.style.bottom = "25%";
+            // Reset opacity of hoverLayer
+            hoverLayer.style.opacity = "0";
+        });
+    });
+    
+    cardContainer.querySelectorAll('.playbtn').forEach(playbtn => {
+      playbtn.addEventListener('mouseover', () => {
+          playbtn.style.transform = "scale(1.10)";
+          playbtn.style.bottom = "40%";
+          playbtn.style.opacity = "1";
+      });
+
+      playbtn.addEventListener('mouseleave', () => {
+          playbtn.style.transform = "scale(1)";
+          playbtn.style.opacity = "0";
+      });
+    });
 }
 generatePictureCards();
 
@@ -111,6 +148,26 @@ seeall.addEventListener(
         }
     }
 )
+
+for (let i = 0; i < hover.length; i++) {
+    // Attach event listener for the mouseover event
+    hover[i].addEventListener(
+        "mouseover", // Correct event name
+        function () {
+            // Add the 'hover' class to the hovered element
+            this.classList.add('hower');
+        }
+    );
+
+    // Attach event listener for the mouseout event (optional, if you want to remove the class when the mouse leaves)
+    hover[i].addEventListener(
+        "mouseout", // Event for when the mouse leaves the element
+        function () {
+            // Remove the 'hover' class from the element
+            this.classList.remove('hower');
+        }
+    );
+}
 let btns = document.getElementsByClassName("button");
 
 for (let i = 0; i < btns.length; i++) {
