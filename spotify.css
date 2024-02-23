@@ -47,7 +47,6 @@ main,
 .Home-block li .search-logo {
     display: flex;
     justify-content: flex-start;
-
     gap: 8px;
 }
 
@@ -620,3 +619,36 @@ main {
     z-index: 100;
 
   }
+  /*
+@media  (min-width: 2560px){
+        h2{
+            font-size: 2rem;
+            border: 1px solid white;
+        }
+        h3{
+            font-size: 2rem;
+            border: 1px solid white;
+
+        }
+        h4{
+            font-size: 1.40rem;
+            border: 1px solid white;
+
+        }
+        h5{
+            font-size: 1rem;
+            border: 1px solid white;
+
+        }
+        span{
+            font-size: 1.40rem;
+            border: 1px solid white;
+
+        }
+        .sportify-playlist-footer-card a{
+            font-size: 1.25rem;
+            border: 1px solid rgb(255, 0, 0);
+
+        }
+    
+}*/
